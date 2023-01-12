@@ -1,9 +1,38 @@
-.container{
-    margin:auto;
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.container {
+    margin: auto;
     min-width: 360px;
     min-height: 640px;
     max-width: 414px;
-    max-height:896px;
+    max-height: 896px;
     border: 1px solid black;
     border-radius: 18px;
-  }
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+
+}
+
+.topNav {
+    font-family: 'Satisfy';
+    order: 1;
+    max-width: 100%;
+    min-height: 70px;
+    border: 1px solid black;
+    border-radius: 18px 18px 0px 0px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+
+}
+
+.topNav #logotype {
+    order:1;
+    font-size: 20px;
+    margin: 15px;
+    max-width: fit-content;
+    /*border: 1px solid black;
+  border-radius: 18px;*/
+}
