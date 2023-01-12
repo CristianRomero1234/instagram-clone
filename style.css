@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-.container {
+/* Version from branch NavBar-firstStile
+ .container {
     margin: auto;
     min-width: 360px;
     min-height: 640px;
@@ -26,22 +27,70 @@
     flex-direction: row;
     flex-flow: row wrap;
     justify-content: space-between;
-
-
-
-}
-
-.topNav .left {
+}  .topNav .left {
     order: 1;
     font-size: 27px;
     margin: 15px;
     max-width: fit-content;
-    /*border: 1px solid black;
-  border-radius: 18px;*/
+    border: 1px solid black;
+  border-radius: 18px;
 }
 
 .topNav .right {
     order: 2;
-    /*border: 1px solid black;
-  border-radius: 18px;*/
+    border: 1px solid black;
+  border-radius: 18px;
+} */
+
+.container {
+  margin: auto;
+  min-width: fit-content;
+  min-height: 640px;
+  max-width: 414px;
+  max-height: 896px;
+  border: 1px solid black;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+}
+.topNav {
+  position:sticky;
+  top:0px;
+  font-family: "Satisfy";
+  order: 1;
+  max-width: 100%;
+  min-height: 70px;
+  border: 1px solid black;
+  border-radius: 18px 18px 0px 0px;
+  padding: 5px;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.bottomNav {
+  position:sticky;
+  top:700px;
+  bottom:0px; 
+  order: 3;
+  max-width: 100%;
+  min-height: 70px;
+  border: 1px solid black;
+  border-radius: 0px 0px 18px 18px;
+  padding: 5px;
+}
+
+.topNav .left {
+  order: 1;
+  font-size: 27px;
+  margin: 15px;
+  max-width: fit-content;
+  border: 1px solid black;
+  border-radius: 18px;
+}
+
+.topNav .right {
+  order: 2;
+  border: 1px solid black;
+  border-radius: 18px;
 }
