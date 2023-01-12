@@ -25,14 +25,23 @@
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
+    justify-content: space-between;
+
+
 
 }
 
-.topNav #logotype {
-    order:1;
-    font-size: 20px;
+.topNav .left {
+    order: 1;
+    font-size: 27px;
     margin: 15px;
     max-width: fit-content;
+    /*border: 1px solid black;
+  border-radius: 18px;*/
+}
+
+.topNav .right {
+    order: 2;
     /*border: 1px solid black;
   border-radius: 18px;*/
 }
