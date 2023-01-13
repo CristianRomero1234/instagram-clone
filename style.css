@@ -59,7 +59,7 @@
   min-width: fit-content;
   min-height: 640px;
   max-width: 414px;
-  max-height: 808px;
+  max-height: 600px;
   border: 1px solid black;
   border-radius: 18px;
   display: flex;
@@ -83,7 +83,7 @@
 }
 .bottomNav {
   position:sticky;
-  top:700px;
+  top:530px;
   bottom:0px; 
   order: 3;
   max-width: 100%;
@@ -123,8 +123,8 @@ border-radius: 18px;*/
   flex-direction: column;
   /* flex-flow: column wrap; */
   overflow:auto;
-  min-height:inherit;
-  max-height:650px;
+  min-height:400px;
+  max-height:inherit;
   border: 1px solid black;
   /* border-radius: 18px; */
 }
