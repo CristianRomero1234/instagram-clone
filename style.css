@@ -16,7 +16,7 @@
   order:2;
   border: 1px solid black;
   border-radius: 18px;
-  max-height:fit-content;
+  max-height:400px;
   max-width: 414px;
 }
 .post .visuals{
