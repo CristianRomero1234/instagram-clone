@@ -42,7 +42,7 @@
   border-radius: 18px;
 } */
 
-.container {
+/* .container {
   margin: auto;
   min-width: fit-content;
   min-height: 640px;
@@ -53,7 +53,19 @@
   display: flex;
   flex-direction: column;
   flex-flow: column wrap;
-}
+} */
+.container {
+  margin: auto;
+  min-width: fit-content;
+  min-height: 640px;
+  max-width: 414px;
+  max-height: 808px;
+  border: 1px solid black;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+} 
 .topNav {
   position:sticky;
   top:0px;
@@ -92,24 +104,39 @@
   /* border: 1px solid black;
 border-radius: 18px; */
 }
-
 .topNav .right {
   order: 2;
   /*border: 1px solid black;
 border-radius: 18px;*/
 }
-
-.topNav .left {
-  order: 1;
-  font-size: 27px;
-  margin: 15px;
-  max-width: fit-content;
-  /* border: 1px solid black;
-  border-radius: 18px; */
+.postArea{
+  order:2;
+  display: flex;
+  flex-direction: column;
+  /* flex-flow: column wrap; */
+  overflow:auto;
+  min-height:inherit;
+  max-height:650px;
+  border: 1px solid black;
+  /* border-radius: 18px; */
+}
+.post {
+    
+  border: 1px solid black;
+  border-radius: 18px;
+  max-height: fit-content;
+  max-width: inherit;
 }
 
-.topNav .right {
-  order: 2;
-  /* border: 1px solid black;
-  border-radius: 18px; */
+.post .visuals {
+  border: 1px solid black;
+  height: 300px;
+
+}
+
+.post .captionArea {
+  border: 1px solid black;
+  border-radius: 0px 0px 18px 18px;
+  height: 100px;
+
 }
