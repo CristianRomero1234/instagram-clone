@@ -66,6 +66,10 @@
   border: 1px solid black;
   border-radius: 18px 18px 0px 0px;
   padding: 5px;
+  display:flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 .bottomNav {
   position:sticky;
@@ -77,4 +81,22 @@
   border: 1px solid black;
   border-radius: 0px 0px 18px 18px;
   padding: 5px;
+  display:flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.topNav .left {
+  order: 1;
+  font-size: 27px;
+  margin: 15px;
+  max-width: fit-content;
+  /* border: 1px solid black;
+border-radius: 18px; */
+}
+
+.topNav .right {
+  order: 2;
+  /* border: 1px solid black;
+border-radius: 18px; */
 }
