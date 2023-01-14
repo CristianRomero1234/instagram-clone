@@ -144,7 +144,7 @@ border-radius: 18px;*/
 }
 
 .post {
-  border: 0.2px solid black;
+ 
   border-radius: 18px;
   max-height: fit-content;
   max-width: inherit;
@@ -154,15 +154,20 @@ border-radius: 18px;*/
   /* border: 1px solid black; */
   height: 300px;
   margin: 5px;
-
-  border: 1px solid red;
+  border-style: solid;
+  border-width:0.3px 0px 0px 0px;
+  border-color: black;
+  background:lightcyan;
   display: flex;
   flex-direction: column;
 
 }
 
 .post .captionArea {
-  border: 1px solid black;
+  border-style: solid;
+  border-width:0px 0.3px 0.3px 0.3px;
+  border-color: black;
+  
   border-radius: 0px 0px 18px 18px;
   height: 100px;
 
@@ -172,8 +177,8 @@ border-radius: 18px;*/
   order: 1;
 
   top: 0;
-  padding: 2px;
-  border: 1px solid green;
+  padding: 5px;
+  
   display: flex;
   flex-direction: row;
   max-height: fit-content;
@@ -196,12 +201,11 @@ border-radius: 18px;*/
   border-radius: 5px;
   background: grey;
 }
-
 .visuals #visuals-bottomNav {
   order: 2;
   margin-top:245px;
   height: 30px;
-  border: 1px solid black;
+  
   background: white;
   display: flex;
   flex-direction: row;
