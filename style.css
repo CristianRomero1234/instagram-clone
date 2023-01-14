@@ -135,8 +135,9 @@ border-radius: 18px;*/
   border: 1px solid black;
   /* border-radius: 18px; */
 }
-.post {    
-  border: 0.2px solid black;
+
+.post {
+ 
   border-radius: 18px;
   max-height: fit-content;
   max-width: inherit;
@@ -145,12 +146,57 @@ border-radius: 18px;*/
 .post .visuals {
   /* border: 1px solid black; */
   height: 300px;
+  margin: 5px;
+  border: 0.5px solid black;
+  background:lightcyan;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .post .captionArea {
-  /* border: 1px solid black; */
+  /*border: 1px solid black;*/
   border-radius: 0px 0px 18px 18px;
   height: 100px;
+
+}
+
+.visuals .visuals-userInfo {
+  order: 1;
+
+  top: 0;
+  padding: 5px;
+  
+  display: flex;
+  flex-direction: row;
+  max-height: fit-content;
+  justify-content: start;
+  gap: 2px;
+}
+
+.visuals-userInfo #userInfo-stories {
+  order: 1;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: grey;
+}
+
+.visuals-userInfo #userInfo-handle {
+  order: 2;
+  height: 20px;
+  width: 170px;
+  border-radius: 5px;
+  background: grey;
+}
+
+.visuals #visuals-bottomNav {
+  order: 2;
+  margin-top:245px;
+  height: 30px;
+  
+  background: white;
+  display: flex;
+  flex-direction: row;
 
 }
