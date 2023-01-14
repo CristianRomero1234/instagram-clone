@@ -9,10 +9,10 @@ async function getImage(){  fetch('https://jsonplaceholder.typicode.com/albums/1
 getImage();
 
 
-async function getPost(){ fetch(`https://my-json-server.typicode.com/CristianRomero1234/instagram-clone/posts`)
+async function getPost(){ fetch(`https://jsonplaceholder.typicode.com/posts/1`)
   .then((response) => response.json())
   .then((json) =>{ console.log(json);
-    // authorId.innerText = json.userId; //https://jsonplaceholder.typicode.com/posts/1`
+    // authorId.innerText = json.userId; 
     // postId.innerText = json.id;
     // postTitle.innerText = json.title;
     // postBody.innerText = json.body;
