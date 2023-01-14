@@ -145,12 +145,38 @@ border-radius: 18px;*/
 .post .visuals {
   /* border: 1px solid black; */
   height: 300px;
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid red;
 
 }
 
 .post .captionArea {
-  /* border: 1px solid black; */
+   border: 1px solid black; 
   border-radius: 0px 0px 18px 18px;
   height: 100px;
 
+}
+.visuals .visuals-userInfo{
+  padding: 2px;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  max-height: fit-content;
+  justify-content: start;
+  gap:2px;
+}
+.visuals-userInfo #userInfo-stories{
+  order: 1;
+  height:20px;
+  width:20px;
+  border-radius:50%;
+  background:grey;
+}
+.visuals-userInfo #userInfo-handle{
+  order: 2;
+  height:20px;
+  width:170px;
+  border-radius:5px;
+  background:grey;
 }
