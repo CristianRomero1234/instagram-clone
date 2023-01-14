@@ -20,11 +20,16 @@ function create() {
     var userInfoHandle = document.createElement('div');
     userInfoHandle.id = "userInfo-handle";
 
+    var visualsBottomNav = document.createElement('div');
+    visualsBottomNav.id = "visuals-bottomNav";
+
     var captionArea = document.createElement('div');
     captionArea.classList.add("captionArea");
 
+    
     visualsUserInfo.appendChild(userInfoStories);
     visualsUserInfo.appendChild(userInfoHandle);
+    visuals.appendChild(visualsBottomNav);  
     visuals.appendChild(visualsUserInfo);
     post.appendChild(visuals);
     post.appendChild(captionArea);
