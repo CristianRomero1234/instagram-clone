@@ -96,6 +96,14 @@
   flex-flow: row wrap;
   justify-content: space-between;
 }
+.bottomNav #bottomNav-userIcon{
+  width: 40px;
+  border: 3px solid #f877b8;
+  padding: 10px;
+  border-radius: 50%;
+  height: 40px;
+  background: rgb(154, 154, 156);
+}
 .topNav .left {
   order: 1;
   font-size: 27px;
@@ -105,8 +113,7 @@
 border-radius: 18px; */
 }
 .topNav .right {
-  order: 2;
-  
+  order: 2;  
   display: flex;
   flex-direction: row;
   justify-content:center;
@@ -128,22 +135,21 @@ border-radius: 18px;*/
   border: 1px solid black;
   /* border-radius: 18px; */
 }
-.post {
-    
-  border: 1px solid black;
+.post {    
+  border: 0.2px solid black;
   border-radius: 18px;
   max-height: fit-content;
   max-width: inherit;
 }
 
 .post .visuals {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 300px;
 
 }
 
 .post .captionArea {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 0px 0px 18px 18px;
   height: 100px;
 
