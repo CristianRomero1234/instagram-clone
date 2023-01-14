@@ -22,19 +22,36 @@ function create() {
 
     var visualsBottomNav = document.createElement('div');
     visualsBottomNav.id = "visuals-bottomNav";
-
+    populateVisualsAreaBottomNav(visualsBottomNav);
     var captionArea = document.createElement('div');
     captionArea.classList.add("captionArea");
 
-    
+
     visualsUserInfo.appendChild(userInfoStories);
     visualsUserInfo.appendChild(userInfoHandle);
-    visuals.appendChild(visualsBottomNav);  
+    visuals.appendChild(visualsBottomNav);
     visuals.appendChild(visualsUserInfo);
     post.appendChild(visuals);
     post.appendChild(captionArea);
     postArea.appendChild(post);
   }
   console.log(post);
+}
+function populateVisualsAreaBottomNav(visualsBottomNav) {
+  let likeIcon = document.createElement('img');
+  let commentIcon = document.createElement('img');
+  let sendIcon = document.createElement('img');
+  //let saveIcon = document.createElement('img');
+  likeIcon.src = "./images/icons/heartIconTransparent.png"
+  commentIcon.src = "./images/icons/commentsIcon.png"
+  sendIcon.src = "./images/icons/sendTransparent.png"
+  likeIcon.style = "order:1;";
+  commentIcon.style = "order:2;";
+  sendIcon.style = "order:3;";
+  //saveIcon.src = "./images/icons"
+  visualsBottomNav.appendChild(likeIcon); 
+  visualsBottomNav.appendChild(commentIcon); 
+  visualsBottomNav.appendChild(sendIcon);
+
 }
 create();
