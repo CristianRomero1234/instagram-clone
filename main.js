@@ -14,8 +14,10 @@ function populateVisualsAreaBottomNav(visualsBottomNav) {
   return visualsBottomNav;
 }
 function createCaptionArea() {
+  let caption = elementCreator(3,1,"caption",[elementCreator(3,1,"text",[elementCreator(2,'p',1,"commentBody")])])
+  let comments = elementCreator(3,0,"comments",[caption]);
   let likesCounterBox = elementCreator(3, 1, "likesCounter", [elementCreator(0, 1, "likesCounter-number"), elementCreator(0, 1, "likesCounter-likes")]);
-  let captionArea = elementCreator(3, 0, "captionArea", likesCounterBox);
+  let captionArea = elementCreator(3, 0, "captionArea", [likesCounterBox, comments]);
   return captionArea;
 }
 function createDivWithClass(classString) {//Returns a HTML Object <div> with class of parameter
@@ -48,7 +50,7 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
       return createDivWithId(args[1]);
     case 1:
       let icon = document.createElement('img');
-      icon.style = `order:${args[0]}; height:20px;width:20px;`;
+      icon.style = `order:${args[0]}; height:20px; width:20px;`;
       let sources = ["./images/icons/heartIconTransparent.png", "./images/icons/commentsIcon.png", "./images/icons/sendTransparent.png"]
       icon.src = sources[args[0] - 1];
       return icon;
