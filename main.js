@@ -5,49 +5,68 @@ var postArea = document.getElementById("post-area");
 // // postArea.addEventListener("click", create);
 function create() {
   for (var i = 0; i < 35; i++) {
-    var post = document.createElement('div');
-    post.classList.add("post");
-
-    var visuals = document.createElement('div');
-    visuals.classList.add("visuals");
-
-    var visualsUserInfo = document.createElement('div');
-    visualsUserInfo.classList.add("visuals-userInfo");
-
-    var userInfoStories = document.createElement('div');
-    userInfoStories.id = "userInfo-stories";
-
-    var userInfoHandle = document.createElement('div');
-    userInfoHandle.id = "userInfo-handle";
-
-    var visualsBottomNav = document.createElement('div');
-    visualsBottomNav.id = "visuals-bottomNav";
-    populateVisualsAreaBottomNav(visualsBottomNav);
-
-    var captionArea = document.createElement('div');
-    captionArea.classList.add("captionArea");
-
-    var likesCounterBox = document.createElement('div');
-    likesCounterBox.id = "likesCounter";
-
-    var likesCounterNumber = document.createElement('div');
-    likesCounterNumber.id = "likesCounter-number";
-
-    var likesCounterLikes = document.createElement('div');
-    likesCounterLikes.id = "likesCounter-likes";  
-    
-    likesCounterBox.appendChild(likesCounterLikes);
-    likesCounterBox.appendChild(likesCounterNumber);
-    captionArea.appendChild(likesCounterBox);
-    visualsUserInfo.appendChild(userInfoStories);
-    visualsUserInfo.appendChild(userInfoHandle);
-    visuals.appendChild(visualsBottomNav);
-    visuals.appendChild(visualsUserInfo);
-    post.appendChild(visuals);
-    post.appendChild(captionArea);
-    postArea.appendChild(post);
+    let post = [postStructureCreate()];
+    addChildren(postArea, post)
   }
   console.log(post);
+}
+function postStructureCreate() {
+  let post = createDivWithClass("post");  
+  postChildsArray = [createVisualsArea(), createCaptionArea()];
+  addChildren(post, postChildsArray);  // [visuals, captionArea];
+  return post;
+
+}
+function createVisualsArea() {
+  let visualsArea = createDivWithClass("visuals");
+  let visualsUserInfo = createDivWithClass("visuals-userInfo");
+  let userInfoStories = createDivWithId("userInfo-stories");
+  let userInfoHandle = createDivWithId("userInfo-handle");
+  let visualsBottomNav = createDivWithId("visuals-bottomNav");
+  populateVisualsAreaBottomNav(visualsBottomNav);
+  visualsUserInfoChildsArray = [userInfoStories, userInfoHandle];
+  visualsChildsArray = [visualsUserInfo, visualsBottomNav];
+  addChildren(visualsUserInfo, visualsUserInfoChildsArray);
+  addChildren(visualsArea, visualsChildsArray);
+  return visualsArea;
+
+
+
+}
+function createCaptionArea(){
+  let captionArea = createDivWithClass("captionArea");
+  let likesCounterBox = createDivWithId("likesCounter");
+  let likesCounterNumber = createDivWithId("likesCounter-number");
+  let likesCounterLikes = createDivWithId("likesCounter-likes");
+ 
+ 
+ 
+  likesCounterBoxChildsArray = [likesCounterNumber, likesCounterLikes];  
+  addChildren(likesCounterBox, likesCounterBoxChildsArray);
+  captionAreaChildsArray = [likesCounterBox];
+  addChildren(captionArea, captionAreaChildsArray);
+  return captionArea;
+}
+function createDivWithClass(classString) {
+  var element = document.createElement('div');
+  element.classList.add(classString);
+  return element;
+}
+function createDivWithId(idString) {
+  var element = document.createElement('div');
+  element.id = idString;
+  return element;
+}
+function addChildren(parent, childrenArray) {
+  if (childrenArray instanceof Array) {
+    for (var child = 0; child < childrenArray.length; child++) {
+      parent.appendChild(childrenArray[child]);
+    }
+  } else if (!(childrenArray instanceof Array)) {
+    let child = childrenArray;
+    parent.appendChild(child);
+  }
+  return parent;
 }
 function populateVisualsAreaBottomNav(visualsBottomNav) {
   let likeIcon = document.createElement('img');
@@ -61,8 +80,8 @@ function populateVisualsAreaBottomNav(visualsBottomNav) {
   commentIcon.style = "order:2;";
   sendIcon.style = "order:3;";
   //saveIcon.src = "./images/icons"
-  visualsBottomNav.appendChild(likeIcon); 
-  visualsBottomNav.appendChild(commentIcon); 
+  visualsBottomNav.appendChild(likeIcon);
+  visualsBottomNav.appendChild(commentIcon);
   visualsBottomNav.appendChild(sendIcon);
 
 }
