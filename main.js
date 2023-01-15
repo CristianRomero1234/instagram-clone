@@ -2,8 +2,10 @@ var postArea = document.getElementById("post-area");
 
 function createVisualsArea() {
   let visualsUserInfo = elementCreator(3, 0, "visuals-userInfo", [createDivWithId("userInfo-stories"), createDivWithId("userInfo-handle")]);
+  let visualsImageContainer = elementCreator(3, 0, "visuals-image", elementCreator(4, 'img'))
+
   let visualsBottomNav = populateVisualsAreaBottomNav(elementCreator(0, 1, "visuals-bottomNav"));
-  let visualsArea = elementCreator(3, 0, "visuals", [visualsUserInfo, visualsBottomNav]);//create element with class visuals and add children
+  let visualsArea = elementCreator(3, 0, "visuals", [visualsUserInfo, visualsImageContainer, visualsBottomNav]);//create element with class visuals and add children
   return visualsArea;
 }
 function populateVisualsAreaBottomNav(visualsBottomNav) {
@@ -14,8 +16,8 @@ function populateVisualsAreaBottomNav(visualsBottomNav) {
   return visualsBottomNav;
 }
 function createCaptionArea() {
-  let caption = elementCreator(3,1,"caption",[elementCreator(3,1,"text",[elementCreator(2,'p',1,"commentBody")])])
-  let comments = elementCreator(3,0,"comments",[caption]);
+  let caption = elementCreator(3, 1, "caption", [elementCreator(3, 1, "text", [elementCreator(5, 'p', 1, "commentBody")])])
+  let comments = elementCreator(3, 0, "comments", [caption]);
   let likesCounterBox = elementCreator(3, 1, "likesCounter", [elementCreator(0, 1, "likesCounter-number"), elementCreator(0, 1, "likesCounter-likes")]);
   let captionArea = elementCreator(3, 0, "captionArea", [likesCounterBox, comments]);
   return captionArea;
@@ -65,6 +67,36 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
       }
       var element = createDivWithId(args[1]);
       return addChildren(element, args[2]);
+    case 4: // get image url from jsonplaceholder API
+      let image = document.createElement('img');
+      let imageFetched = async () => {
+        await fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json[0].url);
+            image.src = json[0].url;
+            image.style = "height:300px;width:430px;"
+          })
+      }
+      let url = imageFetched();
+      return image;
+    case 5://fetch post from  jsonplaceholder
+      let postBody = document.createElement(args[0]);
+        let postFetched = async () => {
+          await fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+              postBody.innerText = json.body;
+              postBody.style = "text-overflow: ellipsis;"
+              // authorId.innerText = json.userId; 
+              //     // postId.innerText = json.id;
+              //     // postTitle.innerText = json.title;
+            })
+        }
+      let returnedValue = postFetched();
+      return postBody;
+
   }
 }
 function createPostStructure() {//Creates a placeholder strucuture of a post, returns an HTML Object with all the described sections of a post, the object can be manipulated and added API data

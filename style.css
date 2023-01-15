@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 /* Version from branch NavBar-firstStile
  .container {
@@ -155,7 +156,7 @@ gap:20px;
 
 .post .visuals {
   /* border: 1px solid black; */
-  height: 300px;
+  height: 350px;
   margin: 5px;
   border-style: solid;
   border-width:0.3px 0px 0px 0px;
@@ -181,8 +182,7 @@ gap:20px;
   order: 1;
   background:white;
   top: 0;
-  padding: 5px;
-  
+  padding: 5px; 
   display: flex;
   flex-direction: row;
   max-height: fit-content;
@@ -198,6 +198,7 @@ gap:20px;
   background: grey;
 }
 
+
 .visuals-userInfo #userInfo-handle {
   order: 2;
   height: 20px;
@@ -205,9 +206,11 @@ gap:20px;
   border-radius: 5px;
   background: grey;
 }
+.visuals-image{
+  order:2;
+}
 .visuals #visuals-bottomNav {
-  order: 2;
-  margin-top:245px;
+  order: 3;
   height: 30px;
   gap:20px;
   background: white;
@@ -244,8 +247,9 @@ gap:20px;
 }
 .comments #caption {
   height: 45px;
-  padding: 5px;
   display: flex;
+  overflow: scroll;
+  scrollbar-width: none;
   flex-direction: column;
 }
 #caption #text {
@@ -259,5 +263,10 @@ gap:20px;
   height: 100%;
   width: 100%;
   border-radius: 5px;
-  background: grey;
+  margin:0;
+  overflow: hidden;
+  font-family: "Noto Sans";
+  color:black;
+  font-weight: 1000;
+  /*background: grey;*/
 }
