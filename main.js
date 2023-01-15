@@ -48,7 +48,7 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
       return createDivWithId(args[1]);
     case 1:
       let icon = document.createElement('img');
-      icon.style = `order:${args[0]};`;
+      icon.style = `order:${args[0]}; height:20px;width:20px;`;
       let sources = ["./images/icons/heartIconTransparent.png", "./images/icons/commentsIcon.png", "./images/icons/sendTransparent.png"]
       icon.src = sources[args[0] - 1];
       return icon;
