@@ -23,10 +23,22 @@ function create() {
     var visualsBottomNav = document.createElement('div');
     visualsBottomNav.id = "visuals-bottomNav";
     populateVisualsAreaBottomNav(visualsBottomNav);
+
     var captionArea = document.createElement('div');
     captionArea.classList.add("captionArea");
 
+    var likesCounterBox = document.createElement('div');
+    likesCounterBox.id = "likesCounter";
 
+    var likesCounterNumber = document.createElement('div');
+    likesCounterNumber.id = "likesCounter-number";
+
+    var likesCounterLikes = document.createElement('div');
+    likesCounterLikes.id = "likesCounter-likes";  
+    
+    likesCounterBox.appendChild(likesCounterLikes);
+    likesCounterBox.appendChild(likesCounterNumber);
+    captionArea.appendChild(likesCounterBox);
     visualsUserInfo.appendChild(userInfoStories);
     visualsUserInfo.appendChild(userInfoHandle);
     visuals.appendChild(visualsBottomNav);
