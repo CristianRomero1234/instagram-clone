@@ -278,6 +278,8 @@ gap:20px;
   font-family: "Noto Sans";
   color:black;
   font-weight: 1000;
+  width:400px;
+  overflow: auto;
   /*background: grey;*/
 }
 

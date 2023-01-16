@@ -2,7 +2,7 @@ var postArea = document.getElementById("post-area");
 
 function createVisualsArea() {
   let visualsUserInfo = elementCreator(3, 0, "visuals-userInfo", [createDivWithId("userInfo-stories"), createDivWithId("userInfo-handle")]);
-  let visualsImageContainer = elementCreator(3, 0, "visuals-image", elementCreator(4, 'img'))
+  let visualsImageContainer = elementCreator(3, 0, "visuals-image", elementCreator(6, 'img'))
 
   let visualsBottomNav = populateVisualsAreaBottomNav(elementCreator(0, 1, "visuals-bottomNav"));
   let visualsArea = elementCreator(3, 0, "visuals", [visualsUserInfo, visualsImageContainer, visualsBottomNav]);//create element with class visuals and add children
@@ -99,7 +99,14 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
         }
       let returnedValue = postFetched();
       return postBody;
-
+    case 6: //return empty image to debug, etc
+    let imageFake = document.createElement('img');
+    let test = ()=>{
+    imageFake.src = "";
+    imageFake.style = "height:300px;width:400px;"
+  }
+  let eee = test();
+  return imageFake;
   }
 }
 function createPostStructure() {//Creates a placeholder strucuture of a post, returns an HTML Object with all the described sections of a post, the object can be manipulated and added API data
