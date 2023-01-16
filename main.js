@@ -78,7 +78,7 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
           .then((json) => {
             console.log(json);
             image.src = json.imageUrl;
-            image.style = "height:300px;width:430px;"
+            image.style = "height:300px;width:100%;"
           })
       }
       let url = imageFetched();
