@@ -73,11 +73,11 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
     case 4: // get image url from jsonplaceholder API
       let image = document.createElement('img');
       let imageFetched = async () => {
-        await fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
+        await fetch("https://my-json-server.typicode.com/CristianRomero1234/instagramDb/posts/1")
           .then((response) => response.json())
           .then((json) => {
-            console.log(json[0].url);
-            image.src = json[0].url;
+            console.log(json);
+            image.src = json.imageUrl;
             image.style = "height:300px;width:430px;"
           })
       }
@@ -86,11 +86,11 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
     case 5://fetch post from  jsonplaceholder
       let postBody = document.createElement(args[0]);
         let postFetched = async () => {
-          await fetch('https://jsonplaceholder.typicode.com/posts/1')
+          await fetch("https://my-json-server.typicode.com/CristianRomero1234/instagramDb/posts/1")
             .then((response) => response.json())
             .then((json) => {
               console.log(json);
-              postBody.innerText = json.body;
+              postBody.innerText = json.content;
               postBody.style = "text-overflow: ellipsis;"
               // authorId.innerText = json.userId; 
               //     // postId.innerText = json.id;
