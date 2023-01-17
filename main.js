@@ -2,7 +2,7 @@ var postArea = document.getElementById("post-area");
 
 function createVisualsArea() {
   let visualsUserInfo = elementCreator(3, 0, "visuals-userInfo", [createDivWithId("userInfo-stories"), createDivWithId("userInfo-handle")]);
-  let visualsImageContainer = elementCreator(3, 0, "visuals-image", elementCreator(6, 'img'))
+  let visualsImageContainer = elementCreator(3, 0, "visuals-image", elementCreator(4, 'img'))
 
   let visualsBottomNav = populateVisualsAreaBottomNav(elementCreator(0, 1, "visuals-bottomNav"));
   let visualsArea = elementCreator(3, 0, "visuals", [visualsUserInfo, visualsImageContainer, visualsBottomNav]);//create element with class visuals and add children
@@ -70,10 +70,10 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
       }
       var element = createDivWithId(args[1]);
       return addChildren(element, args[2]);
-    case 4: // get image url from jsonplaceholder API
+    case 4:// get image url from jsonplaceholder API
       let image = document.createElement('img');
       let imageFetched = async () => {
-        await fetch("https://my-json-server.typicode.com/CristianRomero1234/instagramDb/posts/1")
+        await fetch("https://my-json-server.typicode.com/CristianRomero1234/instagramDb/posts/4")
           .then((response) => response.json())
           .then((json) => {
             console.log(json);
@@ -86,7 +86,7 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
     case 5://fetch post from  jsonplaceholder
       let postBody = document.createElement(args[0]);
         let postFetched = async () => {
-          await fetch("https://my-json-server.typicode.com/CristianRomero1234/instagramDb/posts/1")
+          await fetch("https://my-json-server.typicode.com/CristianRomero1234/instagramDb/posts/4")
             .then((response) => response.json())
             .then((json) => {
               console.log(json);
@@ -99,7 +99,7 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
         }
       let returnedValue = postFetched();
       return postBody;
-    case 6: //return empty image to debug, etc
+    case 6://return empty image to debug, etc
     let imageFake = document.createElement('img');
     let test = ()=>{
     imageFake.src = "";
@@ -109,7 +109,7 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
   return imageFake;
   }
 }
-function createPostStructure() {//Creates a placeholder strucuture of a post, returns an HTML Object with all the described sections of a post, the object can be manipulated and added API data
+function createPostStructure() {//Creates a placeholder structure of a post, returns an HTML Object with all the described sections of a post, the object can be manipulated and added API data
   let post = elementCreator(3, 0, "post", [createVisualsArea(), createCaptionArea()]);
   return post;
 }
