@@ -136,7 +136,9 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
           })
       }
       let urlById = imageFetchedById();
-      
+      if(imageElement.src == undefined){
+        imageElement.src = "https://images.unsplash.com/photo-1594568284297-7c64464062b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bm8lMjBjb3B5cmlnaHR8ZW58MHx8MHx8&w=1000&q=80";
+      }
       return imageElement;
     case 8:
       //fetch post from  jsonplaceholder by ID mode5 extension
@@ -154,7 +156,9 @@ function elementCreator(mode, ...args) {//Dependending on selected mode and para
           })
       }
       let returnedValuebyId = postFetchedById();
-      
+      if(postBodyelement.innerText == undefined){
+        postBodyelement.innerText = "Thanks to the new advancements in technology we can observe the vast universe that sorround us #Space";
+      }
       return postBodyelement;
   }
 }
